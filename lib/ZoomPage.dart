@@ -1,4 +1,5 @@
 import 'package:Photofolio/model/ImageItem.dart';
+import 'package:Photofolio/utils/MyCustomScrollBehaviour.dart';
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';
@@ -14,9 +15,11 @@ class PhotoZoomPage extends StatefulWidget {
 class _PhotoZoomPageState extends State<PhotoZoomPage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return ScrollConfiguration(
+      behavior: Mycustomscrollbehaviour(),
       child: PhotoViewGallery.builder(
         scrollPhysics: const BouncingScrollPhysics(),
+
         builder: (BuildContext context, int index) {
           return PhotoViewGalleryPageOptions(
             imageProvider: NetworkImage(widget.galleryItems[index].downloadUrl),

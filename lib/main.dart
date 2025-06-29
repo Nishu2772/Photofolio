@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
     //https://picsum.photos/v2/list?page=2&limit=100
     // https://picsum.photos/v2/list
     final response = await http.get(
-      Uri.parse('https://picsum.photos/v2/list?page=2&limit=100'),
+      Uri.parse('https://picsum.photos/v2/list?page=2&limit=50'),
     );
 
     if (response.statusCode == 200) {
